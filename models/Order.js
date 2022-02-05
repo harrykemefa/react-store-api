@@ -1,22 +1,22 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose"), timestamps = require('mongoose-timestamp')
 
 // MAPPING OUT THE ORDER DATA SCHEMA
-const OrderSchema = new mongoose.Aggregate({
+const OrderSchema = new mongoose.Schema({
    
     userId: { 
         type: String,
-        required: true,
+        required: true
 
     },
 
     products: [
         {
             productId: {
-                type: String,
+                type: String
             },
             quantity: {
                 type: Number,
-                default: 1,
+                default: 1
             },
         },
     ],
@@ -37,6 +37,7 @@ const OrderSchema = new mongoose.Aggregate({
     },
 
 
-}, { timestamps: true});
+}, { timestamps: true });
+
 
 module.exports = mongoose.model("Order", OrderSchema);

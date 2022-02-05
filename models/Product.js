@@ -1,7 +1,7 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose"), timestamps = require('mongoose-timestamp')
 
 // MAPPING OUT THE PRODUCT DATA SCHEMA
-const ProductSchema = new mongoose.Aggregate(
+const ProductSchema = new mongoose.Schema(
     {
     title: { 
         type: String,
@@ -35,6 +35,7 @@ const ProductSchema = new mongoose.Aggregate(
         type: Number,
         required: true
     },
-}, { timestamps: true});
+}, { timestamps: true });
+
 
 module.exports = mongoose.model("Product", ProductSchema);
