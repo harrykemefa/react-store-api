@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-// MAPPING OUT THE USER DATA SCHEMA
+// MAPPING OUT THE USER DATA SCHEMA //
 const UserSchema = new mongoose.Schema({
     username: { 
         type: String,
